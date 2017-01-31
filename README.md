@@ -1,24 +1,9 @@
-# README
+# Twitter clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* twitter clone for practice
 
-Things you may want to cover:
+* one page app
 
-* Ruby version
+* has entries, entries have many tags
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* has tags, tags have many entries
