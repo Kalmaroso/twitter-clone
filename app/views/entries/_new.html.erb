@@ -1,0 +1,21 @@
+<% if current_user %>
+  <h3>Post a new Form</h3>
+  <%= form_for(@entry, url: entries_path, method: "POST") do |f| %>
+    <%= f.label :title %>:<br>
+    <%= f.text_field :title %><br>
+
+    <%= f.label :body %>:<br>
+    <%= f.text_field :body %><br>
+    <ul>
+      <% @tags.each do |tag| %>
+          <%= f.fields_for :tags, tag do |t| %>
+            <li>
+              Tag:
+              <%= t.text_field :name %>
+            </li>
+        <% end %>
+      <% end %>
+    </ul>
+    <%= f.submit "Post" %>
+  <% end %>
+<% end %>

@@ -7,16 +7,20 @@ class SessionsController < ApplicationController
     @email = params[:email]
     @password = params[:password]
     @user = User.find_by(email: @email)
-    if @user.authenticate(@password)
+
+    if @user && @user.authenticate(@password)
       login(@user)
+      flash[:notice] = "Logged in!"
       redirect_to root_path
     else
-      redirect_to login
+      flash[:errors] = "Invalid username and password combination!"
+      redirect_to login_path
     end
   end
 
   def destroy
     logout
+    flash[:notice] = "Logged out!"
     redirect_to root_path
   end
 

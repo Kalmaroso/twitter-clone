@@ -10,8 +10,10 @@ helper_method :user_params
     @user = User.new(user_params)
     if @user.save
       login(@user)
+      flash[:notice] = "User created!"
       redirect_to root_path
     else
+      flash[:errors] = @user.errors
       redirect_to signup_path
     end
   end
