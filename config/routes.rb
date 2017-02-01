@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
-  root to: 'users#index'
+  root to: 'root#index'
 
   resources :entries
+
+  get "/home", to: "root#index"
+
 
   get "/signup", to: "users#new"
   post "/users", to: "users#create"

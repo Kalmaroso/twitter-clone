@@ -1,0 +1,10 @@
+<% @entries.each do |entry| %>
+  <ul>
+    <li>
+      <span class="entry-title"> <%= entry.title %></span>
+      <p class= "entry-body">
+        <%=entry.body %>
+      </p>
+    </li>
+  </ul>
+<% end %>
