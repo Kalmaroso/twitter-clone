@@ -1,9 +1,12 @@
-<% @entries.each do |entry| %>
+<% entries.each do |entry| %>
   <ul>
     <li>
       <span class="entry-title"> <%= entry.title %></span>
       <p class= "entry-body">
         <%=entry.body %>
+        <% entry.tags.each do |tag| %>
+        <span class="hash-tag">#<%= tag.name %></span>
+        <% end %>
       </p>
     </li>
   </ul>

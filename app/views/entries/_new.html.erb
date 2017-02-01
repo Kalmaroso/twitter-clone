@@ -7,10 +7,10 @@
     <%= f.label :body %>:<br>
     <%= f.text_field :body %><br>
     <ul>
-      <% @tags.each do |tag| %>
+        Tags:
+      <% @new_tags.each do |tag| %>
           <%= f.fields_for :tags, tag do |t| %>
             <li>
-              Tag:
               <%= t.text_field :name %>
             </li>
         <% end %>
